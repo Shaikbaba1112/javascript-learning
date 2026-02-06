@@ -3,9 +3,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JS</title>
+    <title>Swiggy - Food Delivery</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>SHAIK BABA</h1>
+    <header>
+        <div class="header-content">
+            <div class="logo">Swiggy</div>
+            <div class="search-box">
+                <input type="text" id="search" placeholder="Search restaurants, cuisines, or dishes...">
+            </div>
+            <div class="header-right">
+                <span class="location">Home</span>
+                <span class="location">About</span>
+                <span class="location">Contact</span>
+                <span class="cart-icon">Cart (<span id="cartCount">0</span>)</span>
+                <button class="login-btn">Sign In</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="banner">
+        <h1>Order food from your favourite restaurants</h1>
+        <p>Fastest delivery • Best prices • Fresh meals</p>
+    </div>
+
+    <div class="container">
+        <h2 class="section-title">🌟 Top Restaurants</h2>
+        
+        <div class="restaurants" id="restaurantList">
+            <div class="restaurant-card" data-name="Biryani Paradise">
+                <div class="restaurant-image">
+                    <img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmlyeWFuaXxlbnwwfHwwfHx8MA%3D%3D" alt="Biryani Paradise">
+                    <span class="delivery-time">30 mins</span>
+                </div>
+                <div class="restaurant-info">
+                    <h3>Biryani Paradise</h3>
+                    <div class="rating">⭐ 4.5 (2.3k reviews)</div>
+                    <p class="cuisine">Biryani, Indian</p>
+                    <div class="footer">
+                        <span>₹200 for two</span>
+                        <button class="add-btn" onclick="addToCart()">Add</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="restaurant-card" data-name="Burger Hub">
+                <div class="restaurant-image">
+                    <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&h=250&fit=crop" alt="Burger Hub">
+                    <span class="delivery-time">25 mins</span>
+                </div>
+                <div class="restaurant-info">
+                    <h3>Burger Hub</h3>
+                    <div class="rating">⭐ 4.7 (1.8k reviews)</div>
+                    <p class="cuisine">Burgers, Fast Food</p>
+                    <div class="footer">
+                        <span>₹150 for two</span>
+                        <button class="add-btn" onclick="addToCart()">Add</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="restaurant-card" data-name="Pizza Express">
+                <div class="restaurant-image">
+                    <img src="https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cGl6emF8ZW58MHx8MHx8fDA%3D" alt="Pizza Express">
+                    <span class="delivery-time">35 mins</span>
+                </div>
+                <div class="restaurant-info">
+                    <h3>Pizza Express</h3>
+                    <div class="rating">⭐ 4.6 (3.1k reviews)</div>
+                    <p class="cuisine">Pizza, Italian</p>
+                    <div class="footer">
+                        <span>₹300 for two</span>
+                        <button class="add-btn" onclick="addToCart()">Add</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="restaurant-card" data-name="Sushi Master">
+                <div class="restaurant-image">
+                    <img src="https://plus.unsplash.com/premium_photo-1664298894960-205f1f7af9ea?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8c3VzaGklMjBtYXN0ZXJ8ZW58MHx8MHx8fDA%3D" alt="Sushi Master">
+                    <span class="delivery-time">40 mins</span>
+                </div>
+                <div class="restaurant-info">
+                    <h3>Sushi Master</h3>
+                    <div class="rating">⭐ 4.8 (2.9k reviews)</div>
+                    <p class="cuisine">Sushi, Japanese</p>
+                    <div class="footer">
+                        <span>₹400 for two</span>
+                        <button class="add-btn" onclick="addToCart()">Add</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="restaurant-card" data-name="Taco Fiesta">
+                <div class="restaurant-image">
+                    <img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=400&h=250&fit=crop" alt="Taco Fiesta">
+                    <span class="delivery-time">28 mins</span>
+                </div>
+                <div class="restaurant-info">
+                    <h3>Taco Fiesta</h3>
+                    <div class="rating">⭐ 4.4 (1.5k reviews)</div>
+                    <p class="cuisine">Tacos, Mexican</p>
+                    <div class="footer">
+                        <span>₹180 for two</span>
+                        <button class="add-btn" onclick="addToCart()">Add</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="restaurant-card" data-name="Pasta Paradise">
+                <div class="restaurant-image">
+                    <img src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=400&h=250&fit=crop" alt="Pasta Paradise">
+                    <span class="delivery-time">32 mins</span>
+                </div>
+                <div class="restaurant-info">
+                    <h3>Pasta Paradise</h3>
+                    <div class="rating">⭐ 4.5 (2.2k reviews)</div>
+                    <p class="cuisine">Pasta, Continental</p>
+                    <div class="footer">
+                        <span>₹250 for two</span>
+                        <button class="add-btn" onclick="addToCart()">Add</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Swiggy Clone. All rights reserved.</p>
+            <p>Fast • Reliable • Delicious</p>
+        </div>
+    </footer>
+
+    <script src="notes.js"></script>
+    <script src="assignment.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
